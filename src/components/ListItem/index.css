@@ -1,0 +1,55 @@
+.list-item li {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; 
+    margin-bottom: 10px; 
+  }
+  .list-item span{
+    align-self:center;
+  }
+  .list-item li input[type="text"] {
+    width: 60%; 
+  }
+  
+  .list-item li input.form-check-input {
+    align-self: center;
+    margin: 0;
+  }
+  
+  .list-item li div {
+    gap: 10px; 
+    align-self: center;
+  }
+
+  .list-item .modify-buttons {
+    display: flex;
+    justify-self: right;
+    gap: 10px;
+  }
+
+  
+  .list-item li button {
+    align-self: center;
+  }
+  
+  .list-item li input.form-check-input {
+    align-self: center;
+    width: 20px; 
+    height: 20px; 
+    border: 2px solid #ccc; 
+    border-radius: 4px; 
+    transition: border-color 0.3s; 
+  
+    &:checked {
+      background-color: #007BFF; 
+      border-color: #007BFF; 
+    }
+  }
+  
+  .list-item li input.form-check-input:focus {
+    outline: none; 
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  

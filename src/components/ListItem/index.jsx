@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import './index.css'
 
 const ListItem = (props) => {
 
@@ -40,7 +41,7 @@ const ListItem = (props) => {
       }
 
     return (
-      <div>
+      <div className='list-item'>
             {props.items.map((item, index) => {
             return(
             <li key={index+1}>
@@ -49,14 +50,16 @@ const ListItem = (props) => {
             <input value={props.updatedInput} onChange = {handleUpdatedInput} type="text" className="form-control" placeholder="Edit this item" aria-label="Edit this item" aria-describedby="basic-addon2" />
             :<span>{item.value}</span>
             } 
-            <input className="form-check-input mt-0" checked={item.checked} onChange={() => handleCheckboxChange(index)} type="checkbox" value="" aria-label="Checkbox to check off completed items"></input> 
-            <div> 
+            </div>
+            <div className='align-items-center'>
+            <input className="form-check-input mt-0 align-self-center" checked={item.checked} onChange={() => handleCheckboxChange(index)} type="checkbox" value="" aria-label="Checkbox to check off completed items"></input> 
+            </div>
+            <div className='modify-buttons'> 
             {props.currentEditableIndex!==index?
             <button className="btn btn-outline-secondary" onClick={()=>handleEdit(index)} type="button" id="button-addon3">Edit item</button>
             :<button className="btn btn-outline-secondary" onClick={()=>handleUpdate(index)} type="submit" id="button-addon3">Update item</button> 
             }
             <button className="btn btn-outline-secondary" onClick={()=> handleDelete(index)} type="button" id="button-addon4">Delete item</button>
-            </div>
             </div>
             </li>
             )
