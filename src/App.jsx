@@ -2,6 +2,7 @@ import './App.css'
 import { useEffect, useState } from 'react';
 import AddToDoItem from './components/AddToDoItem';
 import DisplayToDoItems from './components/DisplayToDoItems';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   const [currentInput, setCurrentInput] = useState('');
@@ -31,6 +32,7 @@ function App() {
       updatedInput={updatedInput}
       setUpdatedInput={setUpdatedInput}
       />
+      <Toaster />
     </div>
   )
 }

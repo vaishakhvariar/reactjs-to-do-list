@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import './index.css'
+import toast from 'react-hot-toast';
 
 const ListItem = (props) => {
 
@@ -29,15 +30,21 @@ const ListItem = (props) => {
             updatedToDoItems[index] = updatedItem;
             props.setCurrentEditableIndex(null);
             props.setUpdatedInput('');
+            toast.success('Item edited successfully'); 
             return updatedToDoItems;
           }
         );
     }
 
     const handleDelete = (index) => {
+        if(props.currentEditableIndex===index){
+            toast.error('Complete your edit first.');
+            return;
+        }
         props.setItems((prevItems) => 
         prevItems.filter((_,i)=>i!==index)
         );
+        toast.success('Deleted item successfully!');        
       }
 
     return (

@@ -1,5 +1,6 @@
 // import { useState } from "react";
 import PropTypes from 'prop-types';
+import toast from 'react-hot-toast';
 
 const AddToDoItem = (props) => {
 
@@ -8,7 +9,7 @@ const AddToDoItem = (props) => {
       }
 
       const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault(); 
         // setCurrentEditableIndex(null);
         if(props.currentInput==='') {return;}
         console.log('Item added in child component!');
@@ -16,6 +17,7 @@ const AddToDoItem = (props) => {
         const newToDoItems = [...props.items, newItem];
         props.setItems(newToDoItems);
         props.setCurrentInput('');
+        toast.success('Added new item');
       }
 
     return(
